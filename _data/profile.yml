@@ -1,0 +1,116 @@
+primary_name: "Han Li"
+primary_name_zh: "李晗"
+secondary_name: ""
+navbar_name: "Han Li 李晗"
+
+positions:
+- name: Assistant Professor
+- name: NanKai University
+  logo: /assets/images/badges/Nankai_University_logo.svg  # Logo is optional
+
+positions_zh:
+- name: 助理教授
+- name: 南开大学
+  logo: /assets/images/badges/Nankai_University_logo.svg  # Logo is optional
+
+
+email: "lihan@nankai.edu.cn"
+# cv_link: link-to-your-cv-file
+gscholar: 7bkmeBUAAAAJ  # This is an example, replace it with your own Google Scholar ID
+github: lihan97
+# twitter: your_twitter_id  # Do not include the '@' symbol
+# wechat_qrcode: /assets/images/etc/wechat.jpg
+# wechat_prompt: >-
+#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+# linkedin: your-linked-in-id
+# orcid: 0000-0000-0000-0000
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    Hi! I am an Assistant Professor at the <b>School of Mathematical Sciences, Nankai University</b>. I received my Ph.D. from the <b>Institute for Interdisciplinary Information Sciences, Tsinghua University</b> in 2024, under the supervision of <a href="https://en.westlake.edu.cn/faculty/jianyang-zeng.html" target="_blank" style="color: inherit; text-decoration: underline;">Prof. Jianyang Zeng</a>.
+  </p>
+  <p>
+    My research resides in the frontier of <b>AI for Life Science</b>, where I seek to develop <b>deep learning frameworks</b> to decipher the fundamental mechanisms governing complex biological systems. I am particularly interested in the <b>mechanistic and quantitative understanding of biological information flow</b>, exploring how molecular interactions across various scales collectively shape complex biological traits and human health.
+  </p>
+  <p>
+    By integrating <b>multi-modal and multi-scale omics data</b> (including genomic, proteomic, metabolomic, single-cell, and spatially resolved profiles), my work aims to build unified computational frameworks that bridge the gap between microscopic molecular mechanisms and macroscopic phenotypic manifestations, ultimately empowering the next generation of precision medicine and drug discovery.
+  </p>
+
+short_bio_zh: >-
+  <p>
+    嗨！我是<b>南开大学数学科学学院</b>的助理教授。我于2024年在<b>清华大学交叉信息研究院 </b>获得博士学位，导师是 <a href="https://en.westlake.edu.cn/faculty/jianyang-zeng.html" target="_blank" style="color: inherit; text-decoration: underline;">曾坚阳教授</a>。
+  </p>
+  <p>
+    我们的研究方向是<b>AI for Life Science</b>，致力于开发深度学习框架，以揭示复杂生物系统的根本机制。我们特别关注生物信息流的机制和定量理解，探索不同尺度上的分子相互作用如何共同塑造复杂的生物性状和人类健康。
+  </p>
+  <p>
+    通过整合<b>多模态和多尺度组学数据</b>（包括基因组、蛋白质组、代谢组、单细胞和空间组学数据），我们致力于构建统一的计算框架，弥合微观分子机制与宏观表型表现之间的差距，最终赋能精准医学和药物发现的新一代方法。
+  </p>
+
+interests:
+  - AI for Life Science
+  - Multi-omics Integration
+  - Precision Medicine
+
+interests_zh:
+  - AI for Life Science
+  - 多组学整合
+  - 精准医学
+portrait_url: /assets/images/photos/portrait.jpg
+# portrait_caption: >-
+#  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+
+education:
+- name: >-
+    Tsinghua University <br/>
+    Institute for Interdisciplinary Information Sciences
+  logo: /assets/images/badges/Tsinghua_University_Logo.svg
+  position: Ph.D. in Computer Science
+  date: Sep. 2019 - Jun. 2024
+- name: >-
+    Jilin University <br/>
+    College of Software
+  logo: /assets/images/badges/Jilin_University_logo.png
+  position: >-
+    B.S. in Software Engineering
+  date: Sep. 2015 - Sep. 2019
+
+education_zh:
+- name: >-
+    清华大学 <br/>
+    交叉信息研究院
+  logo: /assets/images/badges/Tsinghua_University_Logo.svg
+  position: 计算机科学博士
+  date: 2019年9月 - 2024年6月
+- name: >-
+    吉林大学 <br/>
+    软件学院
+  logo: /assets/images/badges/Jilin_University_logo.png
+  position: >-
+    软件工程学士
+  date: 2015年9月 - 2019年9月
+
+experience:
+- name: >-
+    Nankai University <br/>
+    School of Mathematical Sciences
+  logo: /assets/images/badges/Nankai_University_logo.svg
+  position: Assistant Professor
+  date: Jul. 2024 - 
+
+experience_zh:
+- name: >
+    南开大学 <br/>
+    数学科学学院
+  logo: /assets/images/badges/Nankai_University_logo.svg
+  position: 助理教授
+  date: 2024年7月 - 
+
+# awards:
+# - name: Award Name 2
+#   date: 2024
+# - name: Award Name 1 
+#   date: 2021
+# - name: A quick brown fox jumps over the lazy dog and runs away award
+#   date: 2021

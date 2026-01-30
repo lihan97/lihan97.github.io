@@ -1,0 +1,271 @@
+@charset "utf-8";
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    padding-top: 5.0rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 0.8rem!important;
+}
+
+.card-img-overlay {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl {
+    border-radius: 0.8rem!important;
+}
+
+.rounded-xl-bottom {
+    border-bottom-right-radius: 0.8rem !important;
+    border-bottom-left-radius: 0.8rem !important;
+}
+
+.rounded-xl-top {
+    border-top-left-radius: 0.8rem !important;
+    border-top-right-radius: 0.8rem !important;
+}
+
+
+.text-profile-position {
+    font-weight: 400;
+}
+
+.text-profile-bio {
+    /* font-family: "Raleway"; */
+    font-weight: 400;
+}
+
+.navbar {
+    opacity: 0.95;
+    background: linear-gradient(to right, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50 !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #2c3e50 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.navbar-toggler {
+    color: #555 !important;
+}
+
+.inline-badge {
+    height: 16px;
+    vertical-align: -10%;
+    margin-right: 2px;
+    line-break: unset;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.cover-image {
+    width: 180px;
+    max-height: 120px;
+}
+
+.abstract-body {
+    min-height: 100px;
+}
+
+img.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+div.lazy {
+    background-image: url('images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50px 50px;
+    min-height: 80px;
+}
+
+.badge-publication {
+    font-size: 100%;
+}
+
+.email-text {
+    font-family: Source Code Pro, monospace;
+}
+
+/* Publication Cover Toggle */
+.publication-cover-container {
+    transition: all 0.3s ease;
+}
+
+.publication-cover-container.hide-covers {
+    display: none !important;
+}
+
+.publication-cover {
+    display: block;
+}
+
+/* Publication Content Styling */
+.publication-content {
+    padding-left: 2rem !important;
+}
+
+.publication-content.col-md-12 {
+    max-width: 90%;
+    padding-left: 1rem !important;
+}
+
+/* Adjust content width when covers are hidden */
+.publication-cover-container.hide-covers ~ .publication-content {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+
+/* Experience Card Styling */
+.card h6 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Sidebar column for card layout */
+.sidebar-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+/* Profile Card Normal Flow */
+.profile-card-fixed {
+    position: static;
+    z-index: 99;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+/* Profile card container with shadow */
+.profile-card-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 1rem !important;
+}
+
+/* Profile portrait wrapper with 3D border effect */
+.profile-portrait-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 8px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    border-radius: 1rem;
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Increase profile portrait size */
+.profile-portrait {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 0.8rem;
+    display: block;
+}
+
+/* Experience cards fixed positioning */
+.experience-cards-fixed {
+    position: static;
+}
+
+@media (max-width: 992px) {
+    .profile-card-fixed,
+    .experience-cards-fixed {
+        position: static !important;
+        width: 100% !important;
+        top: auto !important;
+        left: auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Prevent text overflow in sidebar cards */
+@media (max-width: 768px) {
+    .col-lg-4 .card {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Stats Card Styling - Compact and Subtle */
+.stats-card {
+    background-color: #fafafa !important;
+    opacity: 0.95;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 0.4rem;
+}
+
+.stats-mini-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.4rem 0;
+    font-size: 0.75rem;
+}
+
+.stats-mini-label {
+    font-weight: 500;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stats-mini-value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.stats-mini-value .badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.4rem !important;
+    font-weight: 600;
+    white-space: nowrap;
+}

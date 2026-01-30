@@ -1,0 +1,54 @@
+---
+layout: default
+title : Publications
+navbar_title: Publications
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+---
+
+{% assign preprints = site.publications | where_exp: "item", "item.type == 'preprint'" | sort: "date" | reverse %}
+{% assign pubs_by_year = site.publications | where_exp: "item", "item.type != 'preprint'" | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+<div class="mb-3" id="coverToggle" style="display: none;">
+    <label class="form-check-label d-flex align-items-center">
+        <input class="form-check-input" type="checkbox" id="toggleCovers">
+        <span class="ms-2">Show Publication Covers</span>
+    </label>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+        <!-- Preprints Section -->
+        {% if preprints.size > 0 %}
+        <h2 class="pt-4" id="preprints">Preprints</h2>
+        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+            {% for item in preprints %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Publications by Year -->
+        {% for year in pubs_by_year %}
+        {% assign num_papers = year.items | size %}
+        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+            {% for item in year.items %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+            {% if preprints.size > 0 %}
+            <a class="nav-link d-block" href="#preprints">Preprints</a>
+            {% endif %}
+            {% for year in pubs_by_year %}
+            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

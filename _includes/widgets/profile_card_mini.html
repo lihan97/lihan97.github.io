@@ -1,0 +1,138 @@
+<div class="profile-card-fixed">
+    <div class="card border-0 shadow-sm bg-white profile-card-container">
+        <div class="card-body px-3 pt-3 pb-2">
+            <div class="row">
+                <div class="col text-center">
+                    {% if site.data.profile.portrait_url %}
+                    <div class="profile-portrait-wrapper">
+                        <img 
+                            src="{{ site.data.profile.portrait_url | relative_url }}" 
+                            class="profile-portrait" 
+                            data-toggle="tooltip" 
+                            data-placement="top" 
+                            title="{{ site.data.profile.portrait_caption }}" 
+                            alt="Portrait">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center h4">
+                    {% if page.lang == 'zh' %}
+                        {{ site.data.profile.primary_name_zh }}
+                    {% else %}
+                        {{ site.data.profile.primary_name }}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row small">
+                <div class="col text-center">
+                    {% if page.lang == 'zh' %}
+                        {% for position in site.data.profile.positions_zh %}
+                        {{ position.name }}<br/>
+                        {% endfor %}
+                    {% else %}
+                        {% for position in site.data.profile.positions %}
+                        {{ position.name }}<br/>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row small">
+                <div class="col text-center">
+                    <a class="email-text" href="mailto:{{ site.data.profile.email | encode_email }}">
+                        {{ site.data.profile.email | replace: "@", "(at)" }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="row pt-3">
+                <div class="col text-center h4">
+                    {% if site.data.profile.gscholar %}
+                    {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+                    {%- assign gscholar_url = site.data.profile.gscholar -%}
+                    {%- else -%}
+                    {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+                    {%- endif -%}
+                    <a class="px-1 no-break" target="_blank" href="{{ gscholar_url }}">
+                        <i class="fab fa-google-scholar"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.data.profile.github %}
+                    <a class="px-1 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% endif %}
+
+                    {% if site.data.profile.wechat_qrcode %}
+                    <a class="px-1 no-break" data-toggle="modal" data-target="#modal-wechat">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                    {% endif %}
+
+                    {% if site.data.profile.twitter %}
+                    <a class="px-1 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    {% endif %}
+
+                    {% if site.data.profile.linkedin %}
+                    <a class="px-1 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+
+                    {% if site.data.profile.orcid %}
+                    <a class="px-1 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+                        <i class="fab fa-orcid"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if page.lang == 'zh' and site.data.profile.interests_zh %}
+                {% assign interests = site.data.profile.interests_zh %}
+            {% else %}
+                {% assign interests = site.data.profile.interests %}
+            {% endif %}
+            {% if interests %}
+            <div class="row mt-3 pt-3 pb-2 border-top">
+                <div class="col px-3">
+                    <div class="small font-weight-600 mb-2" style="color: #495057; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;">
+                        {% if page.lang == 'zh' %}🎯 研究兴趣{% else %}🎯 Research Interests{% endif %}
+                    </div>
+                    <div style="font-size: 0.9rem;">
+                        {% for interest in interests %}
+                            <span class="badge badge-primary mr-1 mb-1">{{ interest }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% if site.data.profile.wechat_qrcode %}
+<div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
+            </div>
+            {% if site.data.profile.wechat_prompt %}
+            <div class="modal-body p-1">
+                {{ site.data.profile.wechat_prompt }}
+            </div>
+            {% endif %}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

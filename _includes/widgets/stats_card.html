@@ -1,0 +1,129 @@
+<!-- Stats Card -->
+<div class="mt-2">
+    <div class="card border-0 shadow-sm bg-white stats-card">
+        <div class="card-body p-2">
+            <div class="row px-1 pb-1">
+                <div class="col">
+                    <small style="font-weight: 600; color: #666;">
+                        {% if page.lang == 'zh' %}
+                            📊 统计
+                        {% else %}
+                            📊 Stats
+                        {% endif %}
+                    </small>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <!-- Visitor Counter -->
+                <div class="stats-mini-item">
+                    <div class="stats-mini-label">
+                        {% if page.lang == 'zh' %}
+                            👁️ 访问
+                        {% else %}
+                            👁️ Visit
+                        {% endif %}
+                    </div>
+                    <div class="stats-mini-value">
+                        <img src="https://visitor-badge.laobi.icu/badge?page_id=lihan97.github.io" alt="visitor badge" style="max-height: 20px; display:inline-block;"/>
+                    </div>
+                </div>
+                
+                <!-- Publications Count -->
+                {% assign total_pubs = site.publications | size %}
+                <div class="stats-mini-item">
+                    <div class="stats-mini-label">
+                        {% if page.lang == 'zh' %}
+                            📄 论文
+                        {% else %}
+                            📄 Pubs
+                        {% endif %}
+                    </div>
+                    <div class="stats-mini-value">
+                        <span class="badge badge-light" style="background-color: #e3f2fd; color: #1976d2; font-size: 0.8rem; padding: 0.25rem 0.4rem; font-weight: 600;">{{ total_pubs }}</span>
+                    </div>
+                </div>
+                
+                <!-- News Count -->
+                {% if page.lang == 'zh' %}
+                    {% assign total_news = site.news_zh | size %}
+                {% else %}
+                    {% assign total_news = site.news | size %}
+                {% endif %}
+                <div class="stats-mini-item">
+                    <div class="stats-mini-label">
+                        {% if page.lang == 'zh' %}
+                            📰 动态
+                        {% else %}
+                            📰 News
+                        {% endif %}
+                    </div>
+                    <div class="stats-mini-value">
+                        <span class="badge badge-light" style="background-color: #f3e5f5; color: #7b1fa2; font-size: 0.8rem; padding: 0.25rem 0.4rem; font-weight: 600;">{{ total_news }}</span>
+                    </div>
+                </div>
+                
+                <!-- Years Active -->
+                {% assign first_pub = site.publications | sort: "date" | first %}
+                {% if first_pub %}
+                    <div class="stats-mini-item">
+                        <div class="stats-mini-label">
+                            {% if page.lang == 'zh' %}
+                                ⏳ 年份
+                            {% else %}
+                                ⏳ Years
+                            {% endif %}
+                        </div>
+                        <div class="stats-mini-value">
+                            <span class="badge badge-light" style="background-color: #fff3e0; color: #f57c00; font-size: 0.8rem; padding: 0.25rem 0.4rem; font-weight: 600;">
+                                {% assign current_year = site.time | date: "%Y" | plus: 0 %}
+                                {% assign first_year = first_pub.date | date: "%Y" | plus: 0 %}
+                                {% assign years = current_year | minus: first_year | plus: 1 %}
+                                {{ years }}
+                            </span>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Preprints -->
+                {% assign preprints = site.publications | where: "type", "preprint" | size %}
+                <div class="stats-mini-item">
+                    <div class="stats-mini-label">
+                        {% if page.lang == 'zh' %}
+                            🔄 预印
+                        {% else %}
+                            🔄 Preprint
+                        {% endif %}
+                    </div>
+                    <div class="stats-mini-value">
+                        <span class="badge badge-light" style="background-color: #f1f8e9; color: #558b2f; font-size: 0.8rem; padding: 0.25rem 0.4rem; font-weight: 600;">{{ preprints }}</span>
+                    </div>
+                </div>
+
+                <!-- Publications by Year -->
+                {% capture current_year %}{% assign t = site.time %}{{ t | date: "%Y" }}{% endcapture %}
+                {% assign pubs_this_year = 0 %}
+                {% for pub in site.publications %}
+                    {% capture pub_year %}{{ pub.date | date: "%Y" }}{% endcapture %}
+                    {% if pub_year == current_year %}
+                        {% assign pubs_this_year = pubs_this_year | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+                <div class="stats-mini-item">
+                    <div class="stats-mini-label">
+                        <span title="Publications this year: {% if page.lang == 'zh' %}今年发表{% else %}This year{% endif %}">
+                            {% if page.lang == 'zh' %}
+                                🎯 今年
+                            {% else %}
+                                🎯 This Yr
+                            {% endif %}
+                        </span>
+                    </div>
+                    <div class="stats-mini-value">
+                        <span class="badge badge-light" style="background-color: #ffe0b2; color: #e65100; font-size: 0.8rem; padding: 0.25rem 0.4rem; font-weight: 600;">{{ pubs_this_year }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
