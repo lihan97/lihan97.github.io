@@ -4,6 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="Han Li, 李晗, AI, Life Science, Deep Learning, Nankai University, 南开大学, Multi-omics, Precision Medicine, Bioinformatics">
+    <meta name="author" content="Han Li">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.data.profile.navbar_name }}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/photos/portrait.jpg">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
     <title>{{ page.title }} - {{ site.data.profile.navbar_name }}</title>
 
     <!-- Stylesheets -->

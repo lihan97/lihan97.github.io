@@ -13,12 +13,18 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-baseurl: "/academic-homepage" # the subpath of your site, e.g. /blog
+baseurl: "" # If hosting on GitHub Pages at username.github.io, leave this empty
+url: "https://lihan97.github.io" # Your site's URL for SEO
+title: "Han Li (李晗) - AI for Life Science"
+description: "Academic homepage of Han Li (李晗). AI for Life Science researcher at Nankai University. Multi-omics integration, deep learning, precision medicine."
+author: "Han Li"
+logo: "/assets/images/photos/portrait.jpg"
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-email-protect
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
