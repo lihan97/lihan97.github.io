@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /_site/
-
 Sitemap: https://lihan97.github.io/sitemap.xml
