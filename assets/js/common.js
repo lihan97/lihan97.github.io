@@ -90,10 +90,10 @@ function updateAdminUI(isAdmin) {
 
 function updateCoverVisibility(show) {
     if (show) {
-        $('.publication-cover-container').removeClass('hide-covers');
+        $('.publication-cover-container').css('display', '').addClass('show-covers');
         $('.publication-content').removeClass('col-md-12 col-xl-12').addClass('col-md-9 col-xl-10');
     } else {
-        $('.publication-cover-container').addClass('hide-covers');
+        $('.publication-cover-container').removeClass('show-covers');
         $('.publication-content').removeClass('col-md-9 col-xl-10').addClass('col-md-12 col-xl-12');
     }
 }

@@ -1,7 +1,7 @@
 ---
 title: "STARNet enables spatially resolved inference of gene regulatory networks from spatial multi-omics data"
 date: 2025-08-01 00:01:00 +0800
-selected: true
+selected: false
 type: "preprint"
 pub: "bioRxiv"
 pub_date: "2025"
